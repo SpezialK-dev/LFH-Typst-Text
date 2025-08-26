@@ -1,3 +1,5 @@
+#import "packages.typ":*
+
 #set page(
 	margin : (top: 2.5cm, bottom: 2.0cm, left: 4.0cm, right: 2.0cm) 
 )
@@ -13,9 +15,17 @@
 
 )
 
-// auschließen von allen Headern 
- 
+/*
+as suggested by 
+https://forum.typst.app/t/how-can-i-switch-from-roman-to-arabic-page-numbers-without-breaking-the-total-page-count/4130 
+*/
+#let roman-numbering(..n) = context {
+  numbering("I/I", n.at(0), counter(page).at(<last-roman-page>).at(0))
+  
+}
 
+
+// auschließen von allen Headern 
 #import("Inhalt/Information.typ"):*
 
 // title page 
@@ -24,7 +34,7 @@
 	margin: (top: 1.31cm, bottom:0.49cm, left:2.29cm, right: 2.29cm)
 )
 #h(4cm)
-
+//TODO Bachlor und Master arbeit blatt bereitstellen
 #align(center)[
 
 ]
@@ -51,18 +61,16 @@ Betreut durch #Pruefer\
 im Fach #Modul im #Semester\
 #v(2cm)
 
-#titel
+*#titel*
 ]
-
+#v(4cm)
 #align(left)[
 #author\
 #Addresse\
 Matr.-Nr.:#MatrNummer\ 
-
-
-
+#Email\
+Abgabedatum : #datetime.today().display()
 ]
-
 
 ]
 
@@ -87,6 +95,17 @@ an bzw. aus dieser Arbeit.
 #outline()
 #pagebreak()
 
+//abkürzungen
+#include "Inhalt/abkuerzung.typ"
+#abbr.list(title: "Abkürzung")
+
+#pagebreak()
+
+// end of Roman page numbering
+#metadata("last-roman-page") <last-roman-page>
+#counter(page).update(1)
+#set page(numbering: "1")
+
 
 #set page(
 	margin : (top: 2.5cm, bottom: 2.0cm, left: 4.0cm, right: 2.0cm) 
@@ -95,6 +114,7 @@ an bzw. aus dieser Arbeit.
 
 
 // user supplied text 
+
 #include "Inhalt/Introduction.typ"
 
 #include "Inhalt/Main_part.typ"
@@ -105,7 +125,9 @@ an bzw. aus dieser Arbeit.
 
 
 #pagebreak()
-#bibliography("quellen.bib")
+#bibliography(
+	style:  "apa",
+"quellen.bib")
 
 
 
