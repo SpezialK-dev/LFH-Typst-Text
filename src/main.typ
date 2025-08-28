@@ -114,7 +114,7 @@ an bzw. aus dieser Arbeit.
 
 
 // user supplied text 
-
+#set heading(numbering: "1.") // so one can use labels and refere to them without having to add this themselfes 
 #include "Inhalt/Introduction.typ"
 
 #include "Inhalt/Main_part.typ"
