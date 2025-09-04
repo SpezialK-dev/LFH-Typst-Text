@@ -7,14 +7,12 @@
 #set text(
 	size: 11pt,
 	lang: "de",
-	font: "PT Sans"
+	font: "Nimbus Sans"
 )
-
-#set par(
-	spacing: 0.65em
-
-)
-
+//https://github.com/typst/typst/issues/4224
+//https://forum.typst.app/t/getting-office-365-word-line-spacing-in-typst/3422/7
+// this might have to change in the future but for now it should work
+#set par(leading: 0.75em, spacing: 0.75em)
 /*
 as suggested by 
 https://forum.typst.app/t/how-can-i-switch-from-roman-to-arabic-page-numbers-without-breaking-the-total-page-count/4130 
