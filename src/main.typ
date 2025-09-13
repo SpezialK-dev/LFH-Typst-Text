@@ -1,7 +1,7 @@
 #import "packages.typ":*
 
 #set page(
-	margin : (top: 2.5cm, bottom: 2.0cm, left: 4.0cm, right: 2.0cm) 
+	margin : (top: 2.5cm, bottom: 2.0cm, left: 4.0cm, right: 2.0cm)
 )
 
 #set text(
@@ -12,21 +12,21 @@
 //https://github.com/typst/typst/issues/4224
 //https://forum.typst.app/t/getting-office-365-word-line-spacing-in-typst/3422/7
 // this might have to change in the future but for now it should work
-#set par(leading: 0.75em, spacing: 0.75em)
+#set par(leading: 0.75em, spacing: 0.75em, justify: true)
 /*
-as suggested by 
-https://forum.typst.app/t/how-can-i-switch-from-roman-to-arabic-page-numbers-without-breaking-the-total-page-count/4130 
+as suggested by
+https://forum.typst.app/t/how-can-i-switch-from-roman-to-arabic-page-numbers-without-breaking-the-total-page-count/4130
 */
 #let roman-numbering(..n) = context {
   numbering("I/I", n.at(0), counter(page).at(<last-roman-page>).at(0))
-  
+
 }
 
 
-// auschließen von allen Headern 
+// auschließen von allen Headern
 #import("Inhalt/Information.typ"):*
 
-// title page 
+// title page
 #if (Bachlorthesis) [
 #set page(
 	margin: (top: 1.31cm, bottom:0.49cm, left:2.29cm, right: 2.29cm)
@@ -47,7 +47,7 @@ https://forum.typst.app/t/how-can-i-switch-from-roman-to-arabic-page-numbers-wit
 #v(4cm)
 #align(left)[
 #Hochschulnahme\
-#Studiengang\ 
+#Studiengang\
 Betreut durch #Pruefer\
 
 
@@ -65,7 +65,7 @@ im Fach #Modul im #Semester\
 #align(left)[
 #author\
 #Addresse\
-Matr.-Nr.:#MatrNummer\ 
+Matr.-Nr.:#MatrNummer\
 #Email\
 Abgabedatum : #datetime.today().display()
 ]
@@ -86,10 +86,10 @@ Verf. die urheberrecht\-lichen Ansprüche und #Firma die Nutzungsrechte
 an bzw. aus dieser Arbeit.
 #pagebreak()
 
-]	
+]
 
 
-// Inhaltsverzeichniss 
+// Inhaltsverzeichniss
 #outline()
 #pagebreak()
 
@@ -106,13 +106,13 @@ an bzw. aus dieser Arbeit.
 
 
 #set page(
-	margin : (top: 2.5cm, bottom: 2.0cm, left: 4.0cm, right: 2.0cm) 
+	margin : (top: 2.5cm, bottom: 2.0cm, left: 4.0cm, right: 2.0cm)
 )
 
 
 
-// user supplied text 
-#set heading(numbering: "1.") // so one can use labels and refere to them without having to add this themselfes 
+// user supplied text
+#set heading(numbering: "1.") // so one can use labels and refere to them without having to add this themselfes
 #include "Inhalt/Introduction.typ"
 
 #include "Inhalt/Main_part.typ"
@@ -145,4 +145,3 @@ Studienleistung verwendet.
 #v(1pt)\
 Ich bin damit einverstanden, dass die Arbeit einer elektronischen Plagiatsprüfung unterzogen werden
 kann. Die Regelungen der Prüfungsordnung zur Täuschung habe ich zur Kenntnis genommen.
-
