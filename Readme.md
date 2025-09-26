@@ -1,5 +1,8 @@
 # How to Use 
 
+> Ich persönlich Empfehle [LFH LaTeX template](https://github.com/SpezialK-dev/LFH-LaTeX-Text) mehr, da LaTeX an ein paar Stellen reifer ist, als Typst. 
+> Dieses Template is relativ ähnlich mit dem LaTeX template also das umswitchen ist nicht sonderlich komplex
+
 
 Um das Dokument zu Compilieren muss man lediglich denn folgenden Befehl ausführen
 ```shell
@@ -16,4 +19,9 @@ Hier sollten packaete eingebunden eingefügt werden, welche überall im Text ver
 
 ### abkürzung.typ
 
-Hier sollten alle Abkürzungen reingeschrieben werden welche verwendet werden, damit dies zentrall passiert man muss diese datei aber nicht verwenden, theoretisch könnte man sie auch in denn Text packen.
+Hier sollten alle Abkürzungen reingeschrieben werden welche verwendet werden, damit dies zentrall passiert man muss diese datei aber nicht verwenden, theoretisch könnte man sie auch in denn Text packen.:
+
+
+### Information.typ 
+
+Enthllt alle Informationen, welche Eingetragen werden müssen für die Arbeit, sowie ob ein Sperrvermerk verwendet werden soll, sowie ob es eine Bachlorthesis ist
